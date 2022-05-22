@@ -1,0 +1,94 @@
+$body-color : #eef0f1
+$green-color : #00a300
+$orange-color : #ffa500
+$red-color : red
+$f-family : 'Poppins', sans-serif
+$theme-border-radius : 5
+
+@mixin button
+    background: $orange-color
+    border: none
+    border-radius: $theme-border-radius+px
+    cursor: pointer
+    color: #fff
+    transition: all .5s
+
+html
+    min-width: 400px
+    min-height: 400px
+    background: $body-color
+
+body
+    font-family: $f-family
+
+h1
+    text-align: center
+    line-height: 1
+    margin: 20px 0px
+    
+.forms
+    display: inline-block  
+    width: 100%  
+    .form-group
+        width: 150px
+        margin: 0 auto
+        margin-top: 10px
+        &:first-child
+            margin-top: 0px
+        label
+            display: block
+        select
+            border: 1px solid #ddd
+            border-radius: $theme-border-radius+px
+            padding: 5px
+            font-size: 1.2rem       
+            width: 100% 
+            font-family: $f-family
+        button
+            width: 150px
+            margin: 0 auto
+            display: inline-block  
+            font-size: 1.2rem
+            padding: 5px
+            @include button
+            &:hover
+                box-shadow: 0 0 5px $orange-color       
+
+.main
+    text-align: center
+    height: 50px
+    margin: 10px auto
+    p
+        font-size: 1.5rem
+        margin: 0
+        border: 2px solid $orange-color
+        display: inline-block
+        padding: 10px
+        border-radius: $theme-border-radius+px
+        font-weight: bold 
+    p.success
+        border-color: $green-color
+    p.danger
+        border-color: $red-color        
+    button
+        width: 100px
+        margin: 10px auto
+        display: block  
+        font-size: 1rem
+        padding: 5px
+        @include button
+        &:hover
+            box-shadow: 0 0 5px $orange-color   
+    button.success
+        background: $green-color
+        &:hover
+            box-shadow: 0 0 5px $green-color                          
+.footer
+    width: 100%
+    position: absolute
+    bottom: 0
+    left: 0
+    text-align: center
+    font-weight: 400
+    img
+        vertical-align: middle    
